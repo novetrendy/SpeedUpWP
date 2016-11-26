@@ -1,0 +1,29 @@
+.css_rules textarea,.section_delivery_date input{color:#0088A9;}
+.nt-title,.nt-title th{color:#21652A;}
+.nt_img{ margin-left: 50px;margin-top: -60px; }
+.ntlogo{ display:block;text-align:center; }
+.speedup{background-color: rgba(188, 238, 0, 0.06);padding: 5px 10px;margin: 0px 0px 0px -20px;}
+.speedup .nav-tab-active, .speedup .nav-tab-active:focus, .speedup .nav-tab-active:focus:active{
+    background: #666!important;background-image: linear-gradient(to bottom, #666, #333)!important;color:#FFF;
+}
+.speedup .nav-tab {background: #555;background-image: linear-gradient(to bottom, #999, #666);color:#FFF;}
+.speedup .nav-tab:hover {background: #555!important;background-image: linear-gradient(to bottom, #666, #333)!important;color:#FFF;}
+.speedup .form-table th{background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.34), rgba(0,0,0,0));padding-left: 5px;transition:all 1s;}
+.speedup .form-table th:hover{background:rgba(0, 0, 0, 0.34);}
+.speedup .form-table td{background:rgba(0, 0, 0, 0.34);}
+@media (max-width:767px) {
+.speedup .form-table tr{ display:block;margin-bottom:5px;}
+}
+@media (min-width:768px) {
+.speedup .form-table tr{ display:inline;margin-right:5px;}
+.deregister_widgets{line-height:60px;}
+.deregister_cf7_pages{display:block!important;margin-top: 10px;}
+.deregister_cf7_pages th{width:350px;}
+}
+.speed-h1{
+    font-size: 30px;
+    background: #333;
+    padding: 5px 10px;
+    color: #fff;
+    line-height: 60px;
+}
