@@ -1,13 +1,14 @@
 <?php
 /*
-*Plugin Name: Speed Up WP !
-*Plugin URI: http://webstudionovetrendy.eu/
-*Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
-*Version: 161126
+* Plugin Name: Speed Up WP !
+* Plugin URI: http://webstudionovetrendy.eu/
+* Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
+* Version: 161126
 * Text Domain: nt-speed-up-wp
 * Domain Path: /languages/
-*Author: Webstudio Nove Trendy
-*Author URI: http://webstudionovetrendy.eu/
+* Author: Webstudio Nove Trendy
+* Author URI: http://webstudionovetrendy.eu/
+* GitHub Plugin URI: https://github.com/novetrendy/SpeedUpWP
 License: License:     GPL2
 */
 if ( ! defined( 'ABSPATH' ) )   {
