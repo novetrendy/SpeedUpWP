@@ -45,7 +45,7 @@ add_action( 'admin_menu', 'nt_speed_up_wp_admin_menu' );
      }
 add_action('nt_after_main_content_admin_page_loop_action', 'speed_up_wp_print_details');
     function speed_up_wp_print_details()    {
-        echo  '<br /><a href="' . admin_url(). 'admin.php?page=speed-up-wp">' . __('Speed Up WP', 'nt-speed-up-wp') . '</a><br /><p>'. __( 'This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.', 'speed-up-wp' ) .'</p><br /><hr />';
+        echo  '<br /><a href="' . admin_url(). 'admin.php?page=speed_up_wp">' . __('Speed Up WP', 'nt-speed-up-wp') . '</a><br /><p>'. __( 'This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.', 'speed-up-wp' ) .'</p><br /><hr />';
     }
 /**
  * Load class
