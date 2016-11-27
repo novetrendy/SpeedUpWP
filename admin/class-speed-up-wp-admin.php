@@ -56,6 +56,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         </h2>
             <form method="post" action="options.php">
             <?php
+            submit_button();
             if( $active_tab == 'wordpress_options' ) {
                 settings_fields( 'nt_speed_up_wp_option_group' );
                 do_settings_sections( 'nt_speed_up_wp' );
