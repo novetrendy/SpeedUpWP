@@ -1,0 +1,10 @@
+*** Speed Up WP ! Changelog ***
+2016.11.27 - version 161127
+* Drobné opravy kvůli kompatibilitě s různými hostingy
+* Přidání tlačítka uložit změny i do vrchní části stránky
+* Přepsání kódu pro automatické aktualizace
+* Oprava chyby v navigaci na stránku s nastavením
+* Přidána podpora pro aktualizaci s GitHubu - nutno mít nainstalovaný GitHub Updater
+
+2016.11.26 - version 1
+* První vydání
