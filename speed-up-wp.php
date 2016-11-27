@@ -9,7 +9,14 @@
 * Author: Webstudio Nove Trendy
 * Author URI: http://webstudionovetrendy.eu/
 * GitHub Plugin URI: https://github.com/novetrendy/SpeedUpWP
-License: License:     GPL2
+* License: GPL2
+*** Changelog ***
+2016.11.27 - version 161127
+* Drobné opravy kvůli kompatibilitě s různými hostingy
+* Přidání tlačítka uložit změny i do vrchní části stránky
+* Přepsání kódu pro automatické aktualizace
+* Oprava chyby v navigaci na stránku s nastavením
+* Přidána podpora pro aktualizaci s GitHubu - nutno mít nainstalovaný GitHub Updater
 */
 if ( ! defined( 'ABSPATH' ) )   {
     exit; // Exit if accessed directly
