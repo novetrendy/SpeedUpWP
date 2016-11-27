@@ -736,12 +736,5 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     /** Print Woocommerce Widgets Section */
     public function print_section_wc_widgets()
     {_e('Here you can disable some Woocommerce widgets.','nt-speed-up-wp');}
-
-
-
-
-
-
-
 }
 ?>
