@@ -182,28 +182,22 @@ if ( $sup_options['disable_auto_updates'] == 1) {
 /**
  * Disable Update Filters
  */
-foreach([
-    'auto_update_plugin'                => '__return_zero',
-    'allow_dev_auto_core_updates'       => '__return_zero',
-    'allow_major_auto_core_updates'     => '__return_zero',
-    'pre_transient_update_plugins'      => '__return_zero',
-    'pre_site_transient_update_plugins' => '__return_zero',
-] as $filter => $callback) add_filter($filter, $callback);
+add_filter( 'auto_update_plugin', '__return_zero' );
+add_filter( 'allow_dev_auto_core_updates', '__return_zero' );
+add_filter( 'allow_major_auto_core_updates', '__return_zero' );
+add_filter( 'pre_transient_update_plugins', '__return_zero' );
+add_filter( 'pre_site_transient_update_plugins', '__return_zero' );
 /**
  * Remove Update Actions
  */
-foreach([
-    'admin_init'            => '_maybe_update_plugins',
-    'load-plugins.php'      => 'wp_update_plugins',
-    'load-update.php'       => 'wp_update_plugins',
-    'wp_update_plugins'     => 'wp_update_plugins',
-    'load-update-core.php'  => 'wp_update_plugins',
-    'init'  => 'cloudfw_module_register_portfolio',
-] as $action => $callback) remove_action($action, $callback);
-
+remove_action('admin_init', '_maybe_update_plugins');
+remove_action('load-plugins.php', 'wp_update_plugins');
+remove_action('load-update.php', 'wp_update_plugins');
+remove_action('wp_update_plugins', 'wp_update_plugins');
+remove_action('load-update-core.php', 'wp_update_plugins');
+remove_action('init', 'cloudfw_module_register_portfolio');
 remove_action('admin_init', '_maybe_update_core');
 remove_action('admin_init', '_maybe_update_themes');
-remove_action('admin_menu', 'aioseop_welcome::add_menus');
 remove_action('init', 'RightPress_Updates::on_wp_init');
 remove_action('init', '_mw_adminimize_remove_admin_bar');
 }
