@@ -12,7 +12,7 @@
 * License: GPL2
 *** Changelog ***
 2016.11.28 - version 161128
-* Přepsání pluginu kvůli E_NOTICE - všechny proměěné se testují isset()
+* Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
 2016.11.27 - version 161127
 * Drobné opravy kvůli kompatibilitě s různými hostingy
 * Přidání tlačítka uložit změny i do vrchní části stránky
