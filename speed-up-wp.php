@@ -3,7 +3,7 @@
 * Plugin Name: Speed Up WP !
 * Plugin URI: http://webstudionovetrendy.eu/
 * Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
-* Version: 161127
+* Version: 161128
 * Text Domain: nt-speed-up-wp
 * Domain Path: /languages/
 * Author: Webstudio Nove Trendy
@@ -11,6 +11,8 @@
 * GitHub Plugin URI: https://github.com/novetrendy/SpeedUpWP
 * License: GPL2
 *** Changelog ***
+2016.11.28 - version 161128
+* Přepsání pluginu kvůli E_NOTICE - všechny proměěné se testují isset()
 2016.11.27 - version 161127
 * Drobné opravy kvůli kompatibilitě s různými hostingy
 * Přidání tlačítka uložit změny i do vrchní části stránky
@@ -74,27 +76,27 @@ global $sup_options,$wsup_options;
 add_action( 'wp_dashboard_setup', 'nt_remove_dashboard_wordpress_meta_box');
     function nt_remove_dashboard_wordpress_meta_box()   {
         global $sup_options;
-        if ( $sup_options['dashboard_primary'] == 1) {
+        if (isset($sup_options['dashboard_primary']) == 1) {
         remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );}
 
-        if ( $sup_options['dashboard_activity'] == 1) {
+        if ( isset ($sup_options['dashboard_activity']) == 1) {
         remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );}
 
-        if ( $sup_options['dashboard_quick_press'] == 1) {
+        if ( isset ($sup_options['dashboard_quick_press']) == 1) {
         remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );}
 
-        if ( $sup_options['dashboard_right_now'] == 1) {
+        if ( isset ($sup_options['dashboard_right_now']) == 1) {
         remove_meta_box( 'dashboard_right_now', 'dashboard', 'side' );}
 };
 
 
 /* Move jQuery to the footer */
-if ( $sup_options['jquery_to_footer'] == 1) {
+if ( isset ($sup_options['jquery_to_footer']) == 1) {
 add_filter( 'admin_enqueue_scripts', function( $hook ) {$GLOBALS['wp_scripts']->add_data( 'jquery', 'group', 1 );});
 }
 
 /* remove query string ver?xxx from static resources */
-if ( $sup_options['remove_query_string_ver'] == 1) {
+if ( isset($sup_options['remove_query_string_ver']) == 1) {
 add_filter( 'script_loader_src', 'qsr_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'qsr_remove_script_version', 15, 1 );
 function qsr_remove_script_version( $src ){
@@ -103,12 +105,12 @@ function qsr_remove_script_version( $src ){
 }
 }
 /* remove metatag generator slider revolution */
-if ( $sup_options['revslider_meta_tag'] == 1) {
+if ( isset($sup_options['revslider_meta_tag']) == 1) {
 add_filter( 'revslider_meta_generator', 'remove_revslider_meta_tag' );
 function remove_revslider_meta_tag() {return '';}
 }
 
-if ( $sup_options['deregister_cf7'] == 1) {
+if ( (isset( $sup_options['deregister_cf7'])) == 1) {
 /* Deregister Contact Form 7 styles and scripts */
 add_action( 'wp_print_styles', 'nt_deregister_cf7', 100 );
 add_action( 'wp_print_scripts', 'nt_deregister_cf7', 100 );
@@ -122,7 +124,7 @@ function nt_deregister_cf7() {
 }
 }
 /* Deregister scripts */
-if (!empty( $sup_options['deregister_cf7'])) {
+if (isset( $sup_options['deregister_cf7'])) {
 add_action( 'wp_print_scripts', 'nt_deregister_scripts', 100 );
 function nt_deregister_scripts() {
     $scripts = $sup_options['deregister_scripts'];
@@ -131,7 +133,7 @@ function nt_deregister_scripts() {
 }
 }
 /* Optimize_heartbeat */
-if ( $sup_options['optimize_heartbeat'] == 1) {
+if ( isset($sup_options['optimize_heartbeat']) == 1) {
 add_action( 'init', 'disable_heartbeat_unless_post_edit_screen', 1 );
 add_filter( 'heartbeat_settings', 'optimize_heartbeat_settings' );
 function optimize_heartbeat_settings( $settings ) {$settings['autostart'] = false;$settings['interval'] = 60;return $settings;}
@@ -139,7 +141,7 @@ function disable_heartbeat_unless_post_edit_screen() {global $pagenow;if ( $page
 }
 
 /* Disable oembed - since WP 4.4 */
-if ( $sup_options['disable_oembed'] == 1) {
+if ( isset ($sup_options['disable_oembed']) == 1) {
 function disable_embeds_init() {
 	global $wp;	$wp->public_query_vars = array_diff( $wp->public_query_vars, array('embed',	) );
 	remove_action( 'rest_api_init', 'wp_oembed_register_route' );
@@ -162,8 +164,10 @@ function disable_embeds_flush_rewrite_rules() {
 register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
 }
 
+
+
 /* Disable Emojis */
-if ( $sup_options['disable_emojis'] == 1) {
+if ( isset($sup_options['disable_emojis']) == 1) {
 add_action( 'init', 'disable_emojis' );
 function disable_emojis() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -185,7 +189,7 @@ function disable_emojis_tinymce( $plugins ) {
 }
 
 /* Disable Auto check updates */
-if ( $sup_options['disable_auto_updates'] == 1) {
+if ( isset ($sup_options['disable_auto_updates']) == 1) {
 /**
  * Disable Update Filters
  */
@@ -210,7 +214,7 @@ remove_action('init', '_mw_adminimize_remove_admin_bar');
 }
 
 /* Settings JPEG compression for new images */
-if ( $sup_options['jpeg_compression'] == 1) {
+if ( isset ($sup_options['jpeg_compression']) == 1) {
 function nt_jpeg_quality( $quality, $context ) {
     $jpeg_quality = get_option('nt_speed_up_wp')['jpeg_compression'];
 	return $jpeg_quality;
@@ -218,11 +222,11 @@ function nt_jpeg_quality( $quality, $context ) {
 add_filter( 'jpeg_quality', 'nt_jpeg_quality', 10, 2 );
 }
 /* Disable XMLRPC */
-if ( $sup_options['disable_xmlrpc'] == 1) {
+if ( isset ($sup_options['disable_xmlrpc']) == 1) {
 add_filter('xmlrpc_enabled', '__return_false');
 }
 /* Disable JSON REST API */
-if ( $sup_options['disable_json'] == 1) {
+if ( isset ($sup_options['disable_json']) == 1) {
 add_filter('json_enabled', '__return_false');
 add_filter('json_jsonp_enabled', '__return_false');
 }
@@ -230,50 +234,29 @@ add_filter('json_jsonp_enabled', '__return_false');
 function remove_wp_widget() {
     global $sup_options;
     // Wordpress Widgets
-    if ( $sup_options['calendar'] == 1) {
-    unregister_widget('WP_Widget_Calendar');    }
-    if ($sup_options['archives'] == 1) {
-    unregister_widget('WP_Widget_Archives');    }
-    if ( $sup_options['links'] == 1) {
-    unregister_widget('WP_Widget_Links');    }
-    if ( $sup_options['meta'] == 1) {
-    unregister_widget('WP_Widget_Meta');    }
-    if ( $sup_options['pages'] == 1) {
-    unregister_widget('WP_Widget_Pages');   }
-    if ( $sup_options['categories'] == 1) {
-    unregister_widget('WP_Widget_Categories');  }
-    if ( $sup_options['recent_posts'] == 1) {
-    unregister_widget('WP_Widget_Recent_Posts'); }
-    if ( $sup_options['recent_comments'] == 1) {
-    unregister_widget('WP_Widget_Recent_Comments'); }
-    if ( $sup_options['rss'] == 1) {
-    unregister_widget('WP_Widget_RSS');  }
-    if ( $sup_options['tag_cloud'] == 1) {
-    unregister_widget('WP_Widget_Tag_Cloud'); }
-    if ( $sup_options['menu'] == 1) {
-    unregister_widget('WP_Nav_Menu_Widget'); }
-    if ( isset ($sup_options['search']) && $sup_options['search'] == 1) {
-  unregister_widget('WP_Widget_Search');}
-    if ( !empty($sup_options['text']) == 1) {
-  unregister_widget('WP_Widget_Text');}
+    if ( isset($sup_options['calendar']) == 1) {unregister_widget('WP_Widget_Calendar');}
+    if ( isset($sup_options['archives']) == 1) {unregister_widget('WP_Widget_Archives');}
+    if ( isset($sup_options['links']) == 1) {unregister_widget('WP_Widget_Links');}
+    if ( isset($sup_options['meta']) == 1) {unregister_widget('WP_Widget_Meta');}
+    if ( isset($sup_options['pages']) == 1) {unregister_widget('WP_Widget_Pages');}
+    if ( isset($sup_options['categories']) == 1) {unregister_widget('WP_Widget_Categories');}
+    if ( isset($sup_options['recent_posts']) == 1) {unregister_widget('WP_Widget_Recent_Posts');}
+    if ( isset($sup_options['recent_comments']) == 1) {unregister_widget('WP_Widget_Recent_Comments');}
+    if ( isset($sup_options['rss']) == 1) {unregister_widget('WP_Widget_RSS');}
+    if ( isset($sup_options['tag_cloud']) == 1) {unregister_widget('WP_Widget_Tag_Cloud');}
+    if ( isset($sup_options['menu']) == 1) {unregister_widget('WP_Nav_Menu_Widget');}
+    if ( isset($sup_options['search']) == 1) {unregister_widget('WP_Widget_Search');}
+    if ( isset($sup_options['text']) == 1) {unregister_widget('WP_Widget_Text');}
   // CloudFW Widgets
-  if ( $sup_options['blog_list'] == 1) {
-  unregister_widget( 'CloudFw_Widget_Blog_List' ); }
-  if ( $sup_options['carousel'] == 1) {
-  unregister_widget('CloudFw_Widget_Carousel'); }
-  if ( $sup_options['get_content'] == 1) {
-  unregister_widget('CloudFw_Widget_Get_Content'); }
-  if ( $sup_options['socialbar'] == 1) {
-  unregister_widget('CloudFw_Widget_Socialbar'); }
-  if ( $sup_options['twitter'] == 1) {
-  unregister_widget('CloudFw_Widget_Twitter'); }
-  if ( $sup_options['mailchimp'] == 1) {
-  unregister_widget('CloudFw_MailChimp'); }
-  if ( $sup_options['subpost'] == 1) {
-  unregister_widget('CloudFw_Widget_Subpost');}
+  if ( isset ($sup_options['blog_list']) == 1) {unregister_widget( 'CloudFw_Widget_Blog_List' );}
+  if ( isset ($sup_options['carousel']) == 1) {unregister_widget('CloudFw_Widget_Carousel');}
+  if ( isset ($sup_options['get_content']) == 1) {unregister_widget('CloudFw_Widget_Get_Content');}
+  if ( isset ($sup_options['socialbar']) == 1) {unregister_widget('CloudFw_Widget_Socialbar');}
+  if ( isset ($sup_options['twitter']) == 1) {unregister_widget('CloudFw_Widget_Twitter');}
+  if ( isset ($sup_options['mailchimp']) == 1) {unregister_widget('CloudFw_MailChimp');}
+  if ( isset ($sup_options['subpost']) == 1) {unregister_widget('CloudFw_Widget_Subpost');}
   // Other Widgets
-  if ( $sup_options['revslider'] == 1) {
-  unregister_widget('RevSliderWidget');}
+  if ( isset ($sup_options['revslider']) == 1) {unregister_widget('RevSliderWidget');}
 }
 add_action( 'widgets_init', 'remove_wp_widget');
 
@@ -284,34 +267,20 @@ add_action( 'widgets_init', 'remove_wp_widget');
 add_action( 'widgets_init', 'remove_wc_widget',50 );
 function remove_wc_widget() {
     global $wsup_options;
-    if ( $wsup_options['products_cats'] == 1) {
-    unregister_widget( 'WC_Widget_Product_Categories' ); }
-    if ( $wsup_options['products'] == 1) {
-    unregister_widget( 'WC_Widget_Products' ); }
-    if ( $wsup_options['product_tag_clouds'] == 1) {
-    unregister_widget( 'WC_Widget_Product_Tag_Cloud' );  }
-    if ( $wsup_options['cart'] == 1) {
-    unregister_widget( 'WC_Widget_Cart' );  }
-    if ( $wsup_options['layered_nav'] == 1) {
-    unregister_widget( 'WC_Widget_Layered_Nav' ); }
-    if ( $wsup_options['layered_nav_filters'] == 1) {
-    unregister_widget( 'WC_Widget_Layered_Nav_Filters' ); }
-    if ( $wsup_options['price_filter'] == 1) {
-    unregister_widget( 'WC_Widget_Price_Filter' ); }
-    if ( $wsup_options['product_search'] == 1) {
-    unregister_widget( 'WC_Widget_Product_Search' ); }
-    if ( $wsup_options['top_rated'] == 1) {
-    unregister_widget( 'WC_Widget_Top_Rated_Products' ); }
-    if ( $wsup_options['recent_reviews'] == 1) {
-    unregister_widget( 'WC_Widget_Recent_Reviews' ); }  
-    if ( $wsup_options['recently_viewed'] == 1) {
-    unregister_widget( 'WC_Widget_Recently_Viewed' ); }
-    if ( $wsup_options['brand_description'] == 1) {
-    unregister_widget('WC_Widget_Brand_Description');}
-    if ( $wsup_options['brand_nav'] == 1) {
-    unregister_widget('WC_Widget_Brand_Nav');}
-    if ( $wsup_options['brand_thumb'] == 1) {
-    unregister_widget('WC_Widget_Brand_Thumbnails');}
+    if ( isset ($wsup_options['products_cats']) == 1) {unregister_widget( 'WC_Widget_Product_Categories' ); }
+    if ( isset ($wsup_options['products']) == 1) {unregister_widget( 'WC_Widget_Products' ); }
+    if ( isset ($wsup_options['product_tag_clouds']) == 1) {unregister_widget( 'WC_Widget_Product_Tag_Cloud' );  }
+    if ( isset ($wsup_options['cart']) == 1) {unregister_widget( 'WC_Widget_Cart' );  }
+    if ( isset ($wsup_options['layered_nav']) == 1) {unregister_widget( 'WC_Widget_Layered_Nav' ); }
+    if ( isset ($wsup_options['layered_nav_filters']) == 1) {unregister_widget( 'WC_Widget_Layered_Nav_Filters' ); }
+    if ( isset ($wsup_options['price_filter']) == 1) {unregister_widget( 'WC_Widget_Price_Filter' ); }
+    if ( isset ($wsup_options['product_search']) == 1) {unregister_widget( 'WC_Widget_Product_Search' ); }
+    if ( isset ($wsup_options['top_rated']) == 1) {unregister_widget( 'WC_Widget_Top_Rated_Products' ); }
+    if ( isset ($wsup_options['recent_reviews']) == 1) {unregister_widget( 'WC_Widget_Recent_Reviews' ); }
+    if ( isset ($wsup_options['recently_viewed']) == 1) {unregister_widget( 'WC_Widget_Recently_Viewed' ); }
+    if ( isset ($wsup_options['brand_description']) == 1) {unregister_widget('WC_Widget_Brand_Description');}
+    if ( isset ($wsup_options['brand_nav']) == 1) {unregister_widget('WC_Widget_Brand_Nav');}
+    if ( isset ($wsup_options['brand_thumb']) == 1) {unregister_widget('WC_Widget_Brand_Thumbnails');}
 }
 
 /* zakáže načítání z wistia */
