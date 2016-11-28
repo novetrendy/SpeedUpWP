@@ -51,7 +51,7 @@ Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 # Changelog
 
 = 161128 =
-* Přepsání pluginu kvůli E_NOTICE - všechny proměěné se testují isset()
+* Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
 
 = 161127 =
 * Drobné opravy kvůli kompatibilitě s různými hostingy
