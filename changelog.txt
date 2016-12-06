@@ -1,4 +1,7 @@
 *** Speed Up WP ! Changelog ***
+2016.12.06 - version 161128
+*Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+
 2016.11.28 - version 161128
 * Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
 
