@@ -49,6 +49,8 @@ Ano, ale pouze lidem, kteří vědí, co jednotlivé funkce dělají.
 Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 # Changelog
+= 161206 =
+* Přidání kompletního odstranění komentářů - zatím bez podpory administrace (vyp/zap)
 
 = 161128 =
 * Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
