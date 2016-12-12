@@ -2,7 +2,7 @@
 Donate link: http://webstufionovetrendy.eu
 Tags: Speed, Wordpress, Woocommerce, Admin, Admin speed, jQuery
 Requires at least: 4.0
-Tested up to: 4.6.1
+Tested up to: 4.7
 Stable tag: 0.5
 
 Tento plugin zrychluje administraci Wordpressu a Woocommerce.
@@ -46,7 +46,11 @@ Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 == Changelog ==
 
+= 161212 =
+* Fixed undefined index in functions nt_deregister_cf7() and nt_deregister_scripts()
+
 = 161128 =
+* Completely rewriting plugin - fixed E_NOTICE, all variables is now testing with isset()
 * Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
 
 = 161127 =
