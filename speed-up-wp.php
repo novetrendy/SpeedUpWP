@@ -3,7 +3,7 @@
 * Plugin Name: Speed Up WP !
 * Plugin URI: http://webstudionovetrendy.eu/
 * Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
-* Version: 161206
+* Version: 161212
 * Text Domain: nt-speed-up-wp
 * Domain Path: /languages/
 * Author: Webstudio Nove Trendy
@@ -117,6 +117,7 @@ if ( (isset( $sup_options['deregister_cf7'])) == 1) {
 add_action( 'wp_print_styles', 'nt_deregister_cf7', 100 );
 add_action( 'wp_print_scripts', 'nt_deregister_cf7', 100 );
 function nt_deregister_cf7() {
+    global $sup_options;
     $cf7_page = $sup_options['deregister_cf7_pages'];
     $cf7_pages = explode("," , $cf7_page);
     if ( !is_page($cf7_pages) ) {
@@ -129,6 +130,7 @@ function nt_deregister_cf7() {
 if (isset( $sup_options['deregister_cf7'])) {
 add_action( 'wp_print_scripts', 'nt_deregister_scripts', 100 );
 function nt_deregister_scripts() {
+    global $sup_options;
     $scripts = $sup_options['deregister_scripts'];
     $nt_scripts = explode("," , $scripts);
         wp_deregister_script($nt_scripts);
