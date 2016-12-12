@@ -1,16 +1,20 @@
 *** Speed Up WP ! Changelog ***
-2016.12.06 - version 161128
-*Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+2016.12.12 - version 161212
+* Fixed undefined index in functions nt_deregister_cf7() and nt_deregister_scripts()
+
+2016.12.06 - version 161206
+* Minor changes
 
 2016.11.28 - version 161128
-* Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+* Completely rewriting plugin - fixed E_NOTICE, all variables is now testing with isset()
+Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
 
 2016.11.27 - version 161127
 * Drobné opravy kvůli kompatibilitě s různými hostingy
 * Přidání tlačítka uložit změny i do vrchní části stránky
 * Přepsání kódu pro automatické aktualizace
 * Oprava chyby v navigaci na stránku s nastavením
-* Přidána podpora pro aktualizaci s GitHubu - nutno mít nainstalovaný GitHub Updater
+* Přidána podpora pro aktualizaci z GitHubu - nutno mít nainstalovaný GitHub Updater
 
 2016.11.26 - version 1
 * První vydání
