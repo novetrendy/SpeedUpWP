@@ -8,9 +8,9 @@
 }
 .speedup .nav-tab {background: #555;background-image: linear-gradient(to bottom, #999, #666);color:#FFF;}
 .speedup .nav-tab:hover {background: #555!important;background-image: linear-gradient(to bottom, #666, #333)!important;color:#FFF;}
-.speedup .form-table th{background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.34), rgba(0,0,0,0));padding-left: 5px;transition:all 1s;}
+.speedup .form-table th{background-image: linear-gradient(to bottom right, rgb(189, 230, 144), rgba(0,0,0,0));padding-left: 5px;transition:all 1s;height:40px;vertical-align:initial;}
 .speedup .form-table th:hover{background:rgba(0, 0, 0, 0.34);}
-.speedup .form-table td{background:rgba(0, 0, 0, 0.34);}
+.speedup .form-table td{background:rgb(165, 204, 131);}
 @media (max-width:767px) {
 .speedup .form-table tr{ display:block;margin-bottom:5px;}
 }
