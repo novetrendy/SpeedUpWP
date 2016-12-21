@@ -49,14 +49,23 @@ Ano, ale pouze lidem, kteří vědí, co jednotlivé funkce dělají.
 Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 # Changelog
+= 161221 =
+* Completely rewriting admin UI to new FLAT UI
+* Add disable load from wistia (WooCommerce)
+* Add disable WooCommerce Dashboard Status
+* Add disable WooCommerce Recent Review Dashboard widget
+* Add remove post type Portfolio for Envision theme
+* Add admin interface for completely remove WordPress comments
+* Update PO/MO Czech language
+
 = 161215 =
 * Small admin CSS changes
 
 = 161206 =
-* Přidání kompletního odstranění komentářů - zatím bez podpory administrace (vyp/zap)
+* Completely remove WordPress comments - without admin interface (on/off) 
 
 = 161128 =
-* Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+* Completely rewriting plugin - E_NOTICE - all variables are now being tested with isset()
 
 = 161127 =
 * Drobné opravy kvůli kompatibilitě s různými hostingy
