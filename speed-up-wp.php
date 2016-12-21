@@ -11,12 +11,20 @@
 * GitHub Plugin URI: https://github.com/novetrendy/SpeedUpWP
 * License: GPL2
 *** Changelog ***
+2016.12.21 - version 161221
+* Completely rewriting admin UI to new FLAT UI
+* Add disable load from wistia (WooCommerce)
+* Add disable WooCommerce Dashboard Status
+* Add disable WooCommerce Recent Review Dashboard widget
+* Add remove post type Portfolio for Envision theme
+* Add admin interface for completely remove WordPress comments
+* Update PO/MO Czech language
 2016.12.15 - version 161215
 * Small admin CSS changes
 2016.12.06 - version 161206
-* Přidání kompletního odstranění komentářů - zatím bez podpory administrace (vyp/zap)
+* Completely remove WordPress comments - without admin interface (on/off)
 2016.11.28 - version 161128
-* Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+* Completely rewriting plugin - E_NOTICE - all variables are now being tested with isset()
 2016.11.27 - version 161127
 * Drobné opravy kvůli kompatibilitě s různými hostingy
 * Přidání tlačítka uložit změny i do vrchní části stránky
@@ -92,7 +100,10 @@ add_action( 'wp_dashboard_setup', 'nt_remove_dashboard_wordpress_meta_box');
         if ( isset ($sup_options['dashboard_right_now']) == 1) {
         remove_meta_box( 'dashboard_right_now', 'dashboard', 'side' );}
 };
-
+    if (isset($sup_options['welcome_panel']) == 1) {
+    add_action( 'wp_dashboard_setup', 'remove_welcome_panel' );
+    function remove_welcome_panel() {global $wp_filter;unset( $wp_filter['welcome_panel'] );}
+}
 
 /* Move jQuery to the footer */
 if ( isset ($sup_options['jquery_to_footer']) == 1) {
@@ -148,6 +159,7 @@ function disable_heartbeat_unless_post_edit_screen() {global $pagenow;if ( $page
 
 /* Remove comments */
 // Disable support for comments and trackbacks in post types
+if ( isset($sup_options['remove_comments']) == 1) {
 function df_disable_comments_post_types_support() {
 	$post_types = get_post_types();
 	foreach ($post_types as $post_type) {
@@ -201,6 +213,7 @@ function df_disable_comments_admin_bar() {
 	}
 }
 add_action('init', 'df_disable_comments_admin_bar');
+}
 
 /* Disable oembed - since WP 4.4 */
 if ( isset ($sup_options['disable_oembed']) == 1) {
@@ -346,15 +359,25 @@ function remove_wc_widget() {
 }
 
 /* zakáže načítání z wistia */
-add_filter( 'woocommerce_enable_admin_help_tab', '__return_false');
+    if ( isset ($wsup_options['wistia']) == 1){add_filter( 'woocommerce_enable_admin_help_tab', '__return_false');}
+
+    if ( isset ($sup_options['portfolio']) == 1){
+    add_action('init','delete_portfolio');
+    remove_action('init', 'cloudfw_module_register_portfolio', 0);
+    function delete_portfolio(){unregister_post_type( 'portfolio' );}
+    }
+
 /** woo dashboard */
-add_action( 'wp_dashboard_setup', 'nt_remove_dashboard_woocommerce_meta_box');
-function nt_remove_dashboard_woocommerce_meta_box() {
-/*remove_meta_box( 'woocommerce_dashboard_status', 'dashboard', 'normal' );*/
-remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );
-};
-add_action( 'wp_dashboard_setup', 'remove_welcome_panel' );
-function remove_welcome_panel() {global $wp_filter;unset( $wp_filter['welcome_panel'] );}
+    if ( isset ($wsup_options['dashboard_woocommerce']) == 1){
+    add_action( 'wp_dashboard_setup', 'nt_remove_dashboard_woocommerce_meta_box');
+    function nt_remove_dashboard_woocommerce_meta_box() {
+    remove_meta_box( 'woocommerce_dashboard_status', 'dashboard', 'normal' );
+    };
+}
 
-
-//remove_action('init', 'cloudfw_module_register_portfolio', 0);
+    if ( isset ($wsup_options['wc_recent_review']) == 1){
+    add_action( 'wp_dashboard_setup', 'nt_remove_wc_recent_review');
+    function nt_remove_wc_recent_review() {
+    remove_meta_box( 'woocommerce_dashboard_recent_reviews', 'dashboard', 'normal' );
+    };
+}
