@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Speed Up WP !\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-21 11:38+0100\n"
-"PO-Revision-Date: 2016-11-26 09:33+0100\n"
+"POT-Creation-Date: 2016-12-21 21:10+0100\n"
+"PO-Revision-Date: 2016-12-21 21:12+0100\n"
 "Last-Translator: Novetrendy <info@novetrendy.eu>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -31,7 +31,7 @@ msgstr "Nastavení Speed Up WP"
 msgid "Speed Up WP !"
 msgstr "Speed Up WP !"
 
-#: ../admin/class-speed-up-wp-admin.php:42 ../speed-up-wp.php:42
+#: ../admin/class-speed-up-wp-admin.php:42 ../speed-up-wp.php:56
 msgid "WebStudio New Trends"
 msgstr "Webstudio Nové Trendy"
 
@@ -43,288 +43,320 @@ msgstr "Speed Up WordPress !"
 msgid "| Plugin settings"
 msgstr "| Nastavení pluginu"
 
-#: ../admin/class-speed-up-wp-admin.php:86
+#: ../admin/class-speed-up-wp-admin.php:87
 msgid "Settings Dasboard Metabox"
 msgstr "Nastavení metaboxů na nástěnce"
 
-#: ../admin/class-speed-up-wp-admin.php:95
+#: ../admin/class-speed-up-wp-admin.php:96
 msgid "Remove Dashboard Meta Box WordPress.com Blog ?"
 msgstr "Odstranit z nástěnky Novinky o Wordpressu?"
 
-#: ../admin/class-speed-up-wp-admin.php:103
+#: ../admin/class-speed-up-wp-admin.php:104
 msgid "Remove Dashboard Meta Box Activity ?"
 msgstr "Odstranit z nástěnky metabox Aktivity?"
 
-#: ../admin/class-speed-up-wp-admin.php:111
+#: ../admin/class-speed-up-wp-admin.php:112
 msgid "Remove Dashboard Meta Box Quick Press ?"
 msgstr "Odstranit z nástěnky Rychlý příspěvek?"
 
-#: ../admin/class-speed-up-wp-admin.php:119
+#: ../admin/class-speed-up-wp-admin.php:120
 msgid "Remove Dashboard Meta Box Right Now ?"
 msgstr "Odstranit Aktuální přehled ?"
 
-#: ../admin/class-speed-up-wp-admin.php:131
+#: ../admin/class-speed-up-wp-admin.php:128
+msgid "Remove Welcome panel ?"
+msgstr "Odstranit Uvítací panel Wordpressu ?"
+
+#: ../admin/class-speed-up-wp-admin.php:140
 msgid "Settings JavaScript"
 msgstr "Nastavení JavaScriptu"
 
-#: ../admin/class-speed-up-wp-admin.php:137
+#: ../admin/class-speed-up-wp-admin.php:146
 msgid "Move jQuery script to the footer ?"
 msgstr "Přesunout JQuery do patičky stránky?"
 
-#: ../admin/class-speed-up-wp-admin.php:145
+#: ../admin/class-speed-up-wp-admin.php:154
 msgid "Remove query string ver?xxx from source ?"
 msgstr "Odstranit query řetězce ver?xxx ze zdroje ?"
 
-#: ../admin/class-speed-up-wp-admin.php:153
+#: ../admin/class-speed-up-wp-admin.php:162
 msgid "Remove meta tag generator Slider Revolution ?"
 msgstr "Odstranit meta tag generator Slider Revolution ?"
 
-#: ../admin/class-speed-up-wp-admin.php:161
+#: ../admin/class-speed-up-wp-admin.php:170
 msgid "Deregister Contact Form7 styles and scripts ?"
 msgstr "Deregistrovat CF7 styly a skripty ?"
 
-#: ../admin/class-speed-up-wp-admin.php:169
+#: ../admin/class-speed-up-wp-admin.php:178
 msgid "Entry page slug with CF7 forms, comma separated."
 msgstr "Zadejte slug stránek, na kterých máte CF7, oddělené čárkou."
 
-#: ../admin/class-speed-up-wp-admin.php:177
+#: ../admin/class-speed-up-wp-admin.php:186
 msgid "Entry script to deregister, comma separated."
 msgstr "Zadejte skripty k deregistrování, oddělené čárkou."
 
-#: ../admin/class-speed-up-wp-admin.php:188
+#: ../admin/class-speed-up-wp-admin.php:197
 msgid "Other Settings"
 msgstr "Další nastavení"
 
-#: ../admin/class-speed-up-wp-admin.php:194
+#: ../admin/class-speed-up-wp-admin.php:203
 msgid "Optimize Heartbeat ?"
 msgstr "Optimalizovat Heartbeat ?"
 
-#: ../admin/class-speed-up-wp-admin.php:201
+#: ../admin/class-speed-up-wp-admin.php:211
 msgid "Disable Oembed ?"
 msgstr "Zakázat Oembed ?"
 
-#: ../admin/class-speed-up-wp-admin.php:208
+#: ../admin/class-speed-up-wp-admin.php:219
 msgid "Disable Emojis ?"
 msgstr "Zakázat Emojis ?"
 
-#: ../admin/class-speed-up-wp-admin.php:215
+#: ../admin/class-speed-up-wp-admin.php:227
 msgid "Disable check for updates?"
 msgstr "Zakázat kontrolu aktualizací?"
 
-#: ../admin/class-speed-up-wp-admin.php:222
+#: ../admin/class-speed-up-wp-admin.php:235
 msgid "Disable XMLRPC ?"
 msgstr "Zakázat XMLRPC ?"
 
-#: ../admin/class-speed-up-wp-admin.php:229
+#: ../admin/class-speed-up-wp-admin.php:243
 msgid "Disable JSON REST API ?"
 msgstr "Zakázat JSON REST AP ?"
 
-#: ../admin/class-speed-up-wp-admin.php:236
+#: ../admin/class-speed-up-wp-admin.php:251
+msgid "Disable Comments ?"
+msgstr "Zakázat komentáře ?"
+
+#: ../admin/class-speed-up-wp-admin.php:259
 msgid ""
 "Entry percent compression JPEG images between 1% - 100%. Default is 82%."
 msgstr "Zadejte v % kompresi JPEG obrázků. Výchozí je 82%."
 
-#: ../admin/class-speed-up-wp-admin.php:247
+#: ../admin/class-speed-up-wp-admin.php:270
 msgid "Wordpress Widgets Settings"
 msgstr "Nastavení WordPress widgetů"
 
-#: ../admin/class-speed-up-wp-admin.php:253
+#: ../admin/class-speed-up-wp-admin.php:276
 msgid "Disable Calendar widget ?"
 msgstr "Zakázat widget Kalendář ?"
 
-#: ../admin/class-speed-up-wp-admin.php:261
+#: ../admin/class-speed-up-wp-admin.php:284
 msgid "Disable Archives widget ?"
 msgstr "Zakázat widget Archiv?"
 
-#: ../admin/class-speed-up-wp-admin.php:269
+#: ../admin/class-speed-up-wp-admin.php:292
 msgid "Disable Links widget ?"
 msgstr "Zakázat widget Odkazy?"
 
-#: ../admin/class-speed-up-wp-admin.php:277
+#: ../admin/class-speed-up-wp-admin.php:300
 msgid "Disable Meta widget ?"
 msgstr "Zakázat widget Základní informace?"
 
-#: ../admin/class-speed-up-wp-admin.php:285
+#: ../admin/class-speed-up-wp-admin.php:308
 msgid "Disable Pages widget ?"
 msgstr "Zakázat widget Stránky?"
 
-#: ../admin/class-speed-up-wp-admin.php:293
+#: ../admin/class-speed-up-wp-admin.php:316
 msgid "Disable Categories widget ?"
 msgstr "Zakázat widget Kategorie?"
 
-#: ../admin/class-speed-up-wp-admin.php:301
+#: ../admin/class-speed-up-wp-admin.php:324
 msgid "Disable Recent Posts widget ?"
 msgstr "Zakázat widget Nejnovější příspěvky?"
 
-#: ../admin/class-speed-up-wp-admin.php:309
+#: ../admin/class-speed-up-wp-admin.php:332
 msgid "Disable Recent Comments ?"
 msgstr "Zakázat widget Komentáře ?"
 
-#: ../admin/class-speed-up-wp-admin.php:317
+#: ../admin/class-speed-up-wp-admin.php:340
 msgid "Disable RSS Widget ?"
 msgstr "Zakázat widget RSS ?"
 
-#: ../admin/class-speed-up-wp-admin.php:325
+#: ../admin/class-speed-up-wp-admin.php:348
 msgid "Disable Tag Cloud Widget ?"
 msgstr "Zakázat widget Štítky ?"
 
-#: ../admin/class-speed-up-wp-admin.php:333
+#: ../admin/class-speed-up-wp-admin.php:356
 msgid "Disable Menu Widget ?"
 msgstr "Zakázat widget Menu ?"
 
-#: ../admin/class-speed-up-wp-admin.php:341
+#: ../admin/class-speed-up-wp-admin.php:364
 msgid "Disable Search Widget ?"
 msgstr "Zakázat widget Vyhledávání ?"
 
-#: ../admin/class-speed-up-wp-admin.php:349
+#: ../admin/class-speed-up-wp-admin.php:372
 msgid "Disable Text Widget ?"
 msgstr "Zakázat widget Text?"
 
-#: ../admin/class-speed-up-wp-admin.php:361
+#: ../admin/class-speed-up-wp-admin.php:384
 msgid "Envision Theme Widgets Settings"
 msgstr "Nastavení widgetů ze šablony Envision"
 
-#: ../admin/class-speed-up-wp-admin.php:367
+#: ../admin/class-speed-up-wp-admin.php:390
 msgid "Disable Blog Posts widget ?"
 msgstr "Zakázat Blog Posts widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:375
+#: ../admin/class-speed-up-wp-admin.php:398
 msgid "Disable Carousel widget ?"
 msgstr "Zakázat Carousel widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:383
+#: ../admin/class-speed-up-wp-admin.php:406
 msgid "Disable Get Page Content ?"
 msgstr "Zakázat Get Page Content ?"
 
-#: ../admin/class-speed-up-wp-admin.php:391
+#: ../admin/class-speed-up-wp-admin.php:414
 msgid "Disable Socialbar widget ?"
 msgstr "Zakázat Socialbar widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:399
+#: ../admin/class-speed-up-wp-admin.php:422
 msgid "Disable Twitter Timeline ?"
 msgstr "Zakázat Twitter Timeline ?"
 
-#: ../admin/class-speed-up-wp-admin.php:407
+#: ../admin/class-speed-up-wp-admin.php:430
 msgid "Disable MailChimp widget ?"
 msgstr "Zakázat MailChimp widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:415
+#: ../admin/class-speed-up-wp-admin.php:438
 msgid "Disable Sub Pages List ?"
 msgstr "Zakázat Sub Pages List ?"
 
-#: ../admin/class-speed-up-wp-admin.php:427
+#: ../admin/class-speed-up-wp-admin.php:446
+msgid "Disable Portfolio ?"
+msgstr "Zakázat portfolio ?"
+
+#: ../admin/class-speed-up-wp-admin.php:458
 msgid "Other Plugin Widgets Settings"
 msgstr "Nastavení widgetů dalších pluginů"
 
-#: ../admin/class-speed-up-wp-admin.php:433
+#: ../admin/class-speed-up-wp-admin.php:464
 msgid "Disable Slider Revolution ?"
 msgstr "Zakázat Slider Revolution ?"
 
-#: ../admin/class-speed-up-wp-admin.php:454
+#: ../admin/class-speed-up-wp-admin.php:485
+msgid "Woocommerce Dashboard Settings"
+msgstr "Nastavení Woocommerce widgetů na nástěnce"
+
+#: ../admin/class-speed-up-wp-admin.php:492
+msgid "Disable Woocommerce Status metabox ?"
+msgstr "Zakázat Woocommerce přehled ?"
+
+#: ../admin/class-speed-up-wp-admin.php:501
+msgid "Disable Woocommerce Recent Reviews ?"
+msgstr "Zakázat Woocommerce widget nejnovější recenze?"
+
+#: ../admin/class-speed-up-wp-admin.php:512
 msgid "Woocommerce Widgets Settings"
 msgstr "Nastavení widgetů Woocommerce"
 
-#: ../admin/class-speed-up-wp-admin.php:462
+#: ../admin/class-speed-up-wp-admin.php:520
 msgid "Disable Woocommerce Product Categories Widget ?"
 msgstr "Zakázat widget Kategorie produktů?"
 
-#: ../admin/class-speed-up-wp-admin.php:470
+#: ../admin/class-speed-up-wp-admin.php:528
 msgid "Disable Woocommerce Products Widget ?"
 msgstr "Zakázat widget Produkty?"
 
-#: ../admin/class-speed-up-wp-admin.php:478
+#: ../admin/class-speed-up-wp-admin.php:536
 msgid "Disable Woocommerce Product Tag Cloud Widget ?"
 msgstr "Zakázat widget Štítky produktů?"
 
-#: ../admin/class-speed-up-wp-admin.php:486
+#: ../admin/class-speed-up-wp-admin.php:544
 msgid "Disable Woocommerce Cart Widget ?"
 msgstr "Zakázat widget Košík?"
 
-#: ../admin/class-speed-up-wp-admin.php:494
+#: ../admin/class-speed-up-wp-admin.php:552
 msgid "Disable Woocommerce Layered Navigation Widget ?"
 msgstr "Zakázat widget Vrstvená navigace?"
 
-#: ../admin/class-speed-up-wp-admin.php:502
+#: ../admin/class-speed-up-wp-admin.php:560
 msgid "Disable Layered Navigation Filters Widget ?"
 msgstr "Zakázat widget Vrstvené navigační filtry?"
 
-#: ../admin/class-speed-up-wp-admin.php:510
+#: ../admin/class-speed-up-wp-admin.php:568
 msgid "Disable Woocommerce Price Filters Widget ?"
 msgstr "Zakázat widget Cenový filtr?"
 
-#: ../admin/class-speed-up-wp-admin.php:518
+#: ../admin/class-speed-up-wp-admin.php:576
 msgid "Disable Woocommerce Product Search Widget ?"
 msgstr "Zakázat widget Vyhledávač produktů?"
 
-#: ../admin/class-speed-up-wp-admin.php:526
+#: ../admin/class-speed-up-wp-admin.php:584
 msgid "Disable Woocommerce Top Rated Widget ?"
 msgstr "Zakázat widget Nejlépe hodnocené produkty?"
 
-#: ../admin/class-speed-up-wp-admin.php:534
+#: ../admin/class-speed-up-wp-admin.php:592
 msgid "Disable Woocommerce Recent Reviews Widget ?"
 msgstr "Zakázat widget Nejnovější recenze?"
 
-#: ../admin/class-speed-up-wp-admin.php:542
+#: ../admin/class-speed-up-wp-admin.php:600
 msgid "Disable Woocommerce Recently Viewed Widget ?"
 msgstr "Zakázat widget Nedávno zobrazené?"
 
-#: ../admin/class-speed-up-wp-admin.php:552
+#: ../admin/class-speed-up-wp-admin.php:610
 msgid "Disable Woocommerce Brand Description Widget ?"
 msgstr "Zakázat Woocommerce Brand Description Widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:560
+#: ../admin/class-speed-up-wp-admin.php:618
 msgid "Disable Woocommerce Brand Layered Navigation Widget ?"
 msgstr "Zakázat Woocommerce Brand Layered Navigation Widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:568
+#: ../admin/class-speed-up-wp-admin.php:626
 msgid "Disable Woocommerce Brand Thumbnail Widget ?"
 msgstr "Zakázat Woocommerce Brand Thumbnail Widget ?"
 
-#: ../admin/class-speed-up-wp-admin.php:657
+#: ../admin/class-speed-up-wp-admin.php:634
+msgid "Disable load help from wistia ?"
+msgstr "Zakázat načítání z wistia ?"
+
+#: ../admin/class-speed-up-wp-admin.php:730
 msgid "Default: "
 msgstr "Výchozí:"
 
-#: ../admin/class-speed-up-wp-admin.php:712
+#: ../admin/class-speed-up-wp-admin.php:790
 msgid "Here you can remove some Dashboard metaboxs."
 msgstr "V této sekci můžete zakázat některé metaboxy na nástěnce."
 
-#: ../admin/class-speed-up-wp-admin.php:716
+#: ../admin/class-speed-up-wp-admin.php:794
 msgid "Here you can manipulate some JavaScript files."
 msgstr "V této sekci můžete upravit některé JavaScript a CSS soubory."
 
-#: ../admin/class-speed-up-wp-admin.php:720
+#: ../admin/class-speed-up-wp-admin.php:798
 msgid "Here you can disable few Wordpress functions."
 msgstr "V této sekci můžete zakázat některé funkce Wordpressu."
 
-#: ../admin/class-speed-up-wp-admin.php:724
+#: ../admin/class-speed-up-wp-admin.php:802
 msgid "Here you can disable some Wordpress widgets."
 msgstr "V této sekci můžete zakázat Wordpress widgety"
 
-#: ../admin/class-speed-up-wp-admin.php:728
+#: ../admin/class-speed-up-wp-admin.php:806
 msgid "Here you can disable some CloudFW widgets from Envision Theme."
 msgstr "V této sekci můžete zakázat  CloudFW widgety ze šablony Envision."
 
-#: ../admin/class-speed-up-wp-admin.php:732
+#: ../admin/class-speed-up-wp-admin.php:810
 msgid "Here you can disable some widgets from few plugins."
 msgstr "V této sekci můžete zakázat  widgety některých pluginů."
 
-#: ../admin/class-speed-up-wp-admin.php:737
+#: ../admin/class-speed-up-wp-admin.php:815
 msgid "Here you can disable some Woocommerce widgets."
 msgstr "V této sekci můžete zakázat Woocommerce widgety"
 
-#: ../speed-up-wp.php:37
+#: ../admin/class-speed-up-wp-admin.php:819
+msgid "Here you can disable some Woocommerce dashboard metaboxes."
+msgstr "V této sekci můžete zakázat Woocommerce widgety na nástěnce."
+
+#: ../speed-up-wp.php:51
 msgid "New Trends"
 msgstr "Nové Trendy"
 
-#: ../speed-up-wp.php:41
+#: ../speed-up-wp.php:55
 msgid "Mainpage for setting plugins from New Trends"
 msgstr "Hlavní stránka pro nastavení zásuvných modulů z webstudia Nové Trendy"
 
-#: ../speed-up-wp.php:47
+#: ../speed-up-wp.php:61
 msgid "Speed Up WP"
 msgstr "Speed Up WP"
 
-#: ../speed-up-wp.php:47
+#: ../speed-up-wp.php:61
 msgid ""
 "This plugin make your Wordpress instalation much faster! Disable some WP "
 "featured for unlock more speed admin backend and also frontend. Use some "
