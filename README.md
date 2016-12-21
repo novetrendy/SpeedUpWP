@@ -6,7 +6,7 @@ Tento plugin zrychluje instalaci Wordpressu a Woocommerce. Zakáže některé fu
 
 Tags: Speed, Wordpress, Woocommerce, Admin, Admin speed, jQuery<br />
 Requires at least: 4.0<br />
-Tested up to: 4.6.1<br />
+Tested up to: 4.7<br />
 Stable tag: 0.5<br />
 
 **Tento plugin zrychluje administraci Wordpressu a Woocommerce.**
@@ -36,8 +36,29 @@ Plugin zatím podporuje následující:
 * Zakázání automatických aktualizací
 * Zakázání XMLRPC
 * Zakázání JSON REST API
+* Odebrání komentářů
 * Možnost zadání komprese jpg obrázků při nahrávání do knihovny médií
 * Možnost zakázání jednotlivých Worpdpress a Woocommerce widgetů
+
+Plugin currently supports the following:
+
+* Dashboard - remove some WordPress and WooCommerce widgets
+* Move jQuery to the footer
+* Remove query string ver?xxx from source 
+* Remove meta tag generator Slider Revolution 
+* Deregister Contact Form7 styles and scripts in some pages
+* Deregister script
+* Optimize Heartbeat 
+* Disable Oembed
+* Disable Emojis
+* Disable check for updates
+* Disable XMLRPC
+* Disable JSON REST API
+* Completely disable comments
+* Settings JPEG compression
+* Disable some Wordpress Widgets
+* Disable some WooCommerce Widgets
+
 
 # Frequently Asked Questions
 
@@ -85,3 +106,5 @@ Screenshoty budou doplněny.
 # Installation
 
 Instalovat plugin, aktivovat a přejít do menu Nové Trendy - Speed Up WP !.
+
+Standard Wordpress installation. Settings page: New Trends -> Speed Up WP !
