@@ -1,16 +1,21 @@
 *** Speed Up WP ! Changelog ***
+2016.12.21 - version 161221
+* Completely rewriting admin UI to new FLAT UI
+* Add disable load from wistia (WooCommerce)
+* Add disable WooCommerce Dashboard Status
+* Add disable WooCommerce Recent Review Dashboard widget
+* Add remove post type Portfolio for Envision theme
+* Add admin interface for completely remove WordPress comments
+* Update PO/MO Czech language
+
 2016.12.15 - version 161215
 * Small admin CSS changes
 
-2016.12.12 - version 161212
-* Fixed undefined index in functions nt_deregister_cf7() and nt_deregister_scripts()
-
 2016.12.06 - version 161206
-* Minor changes
+* Completely remove WordPress comments - without admin interface (on/off)
 
 2016.11.28 - version 161128
-* Completely rewriting plugin - fixed E_NOTICE, all variables is now testing with isset()
-Přepsání pluginu kvůli E_NOTICE - všechny proměnné se testují isset()
+* Completely rewriting plugin - E_NOTICE - all variables are now being tested with isset()
 
 2016.11.27 - version 161127
 * Drobné opravy kvůli kompatibilitě s různými hostingy
