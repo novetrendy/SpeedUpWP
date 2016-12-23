@@ -70,6 +70,9 @@ Ano, ale pouze lidem, kteří vědí, co jednotlivé funkce dělají.
 Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 # Changelog
+= 161223 =
+* Add remove metabox Semper plugins RSS (All In One Seo Pack) from dashboard
+
 = 161221 =
 * Completely rewriting admin UI to new FLAT UI
 * Add disable load from wistia (WooCommerce)
