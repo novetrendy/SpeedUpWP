@@ -3,7 +3,7 @@
 * Plugin Name: Speed Up WP !
 * Plugin URI: http://webstudionovetrendy.eu/
 * Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
-* Version: 161221
+* Version: 161223
 * Text Domain: nt-speed-up-wp
 * Domain Path: /languages/
 * Author: Webstudio Nove Trendy
@@ -11,6 +11,8 @@
 * GitHub Plugin URI: https://github.com/novetrendy/SpeedUpWP
 * License: GPL2
 *** Changelog ***
+2016.12.23 - version 161223
+* Add remove metabox Semper plugins RSS (All In One Seo Pack) from dashboard
 2016.12.21 - version 161221
 * Completely rewriting admin UI to new FLAT UI
 * Add disable load from wistia (WooCommerce)
@@ -99,6 +101,9 @@ add_action( 'wp_dashboard_setup', 'nt_remove_dashboard_wordpress_meta_box');
 
         if ( isset ($sup_options['dashboard_right_now']) == 1) {
         remove_meta_box( 'dashboard_right_now', 'dashboard', 'side' );}
+	    
+	if ( isset ($sup_options['semperplugins_rss_feed']) == 1) {
+        remove_meta_box('semperplugins-rss-feed', 'dashboard', 'normal');}
 };
     if (isset($sup_options['welcome_panel']) == 1) {
     add_action( 'wp_dashboard_setup', 'remove_welcome_panel' );
