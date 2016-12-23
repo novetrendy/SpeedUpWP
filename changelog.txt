@@ -1,4 +1,7 @@
 *** Speed Up WP ! Changelog ***
+2016.12.23 - version 161223
+* Add remove metabox Semper plugins RSS (All In One Seo Pack) from dashboard
+
 2016.12.21 - version 161221
 * Completely rewriting admin UI to new FLAT UI
 * Add disable load from wistia (WooCommerce)
