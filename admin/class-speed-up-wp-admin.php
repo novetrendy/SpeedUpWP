@@ -124,6 +124,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
             array( 'class' => 'metaboxes' )
         );
         add_settings_field(
+            'semperplugins_rss_feed', // semperplugins-rss-feed
+            __('Remove Dashboard Meta Box Semperplugins RSS Feed ?','nt-speed-up-wp'),
+            array( $this, 'semperplugins_rss_feed_callback'),
+            'nt_speed_up_wp',
+            'setting_section_nt_speed_up_wp',
+            array( 'class' => 'metaboxes' )
+        );
+        add_settings_field(
             'welcome_panel', // dashboard_right_now Right Now
             __('Remove Welcome panel ?','nt-speed-up-wp'),
             array( $this, 'welcome_panel_callback'),
@@ -653,6 +661,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         if( isset( $input['dashboard_activity'] ) ) $new_input['dashboard_activity'] = (int)( $input['dashboard_activity'] );
         if( isset( $input['dashboard_quick_press'] ) ) $new_input['dashboard_quick_press'] = (int)( $input['dashboard_quick_press'] );
         if( isset( $input['dashboard_right_now'] ) ) $new_input['dashboard_right_now'] = (int)( $input['dashboard_right_now'] );
+        if( isset( $input['semperplugins_rss_feed'] ) ) $new_input['semperplugins_rss_feed'] = (int)( $input['semperplugins_rss_feed'] );
         if( isset( $input['welcome_panel'] ) ) $new_input['welcome_panel'] = (int)( $input['welcome_panel'] );
         if( isset( $input['jquery_to_footer'] ) ) $new_input['jquery_to_footer'] = (int)( $input['jquery_to_footer'] );
         if( isset( $input['remove_query_string_ver'] ) ) $new_input['remove_query_string_ver'] = (int)( $input['remove_query_string_ver'] );
@@ -719,6 +728,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     public function dashboard_activity_callback(){?><label class="switch"><input name="nt_speed_up_wp[dashboard_activity]" type="checkbox" value="1" <?php checked( isset( $this->options['dashboard_activity'] ) );?> /><div class="slider"></div></label><?php }
     public function dashboard_quick_press_callback(){?><label class="switch"><input name="nt_speed_up_wp[dashboard_quick_press]" type="checkbox" value="1" <?php checked( isset( $this->options['dashboard_quick_press'] ) );?> /><div class="slider"></div></label><?php }
     public function dashboard_right_now_callback(){?><label class="switch"><input name="nt_speed_up_wp[dashboard_right_now]" type="checkbox" value="1" <?php checked( isset( $this->options['dashboard_right_now'] ) );?> /><div class="slider"></div></label><?php }
+    public function semperplugins_rss_feed_callback(){?><label class="switch"><input name="nt_speed_up_wp[semperplugins_rss_feed]" type="checkbox" value="1" <?php checked( isset( $this->options['semperplugins_rss_feed'] ) );?> /><div class="slider"></div></label><?php }
     public function welcome_panel_callback(){?><label class="switch"><input name="nt_speed_up_wp[welcome_panel]" type="checkbox" value="1" <?php checked( isset( $this->options['welcome_panel'] ) );?> /><div class="slider"></div></label><?php }
     public function jquery_to_footer_callback(){?><label class="switch"><input name="nt_speed_up_wp[jquery_to_footer]" type="checkbox" value="1" <?php checked( isset( $this->options['jquery_to_footer'] ) );?> /><div class="slider"></div></label><?php  }
     public function remove_query_string_ver_callback(){?><label class="switch"><input name="nt_speed_up_wp[remove_query_string_ver]" type="checkbox" value="1" <?php checked( isset( $this->options['remove_query_string_ver'] ) );?> /><div class="slider"></div></label><?php }
