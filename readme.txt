@@ -104,7 +104,7 @@ Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 # Screenshots
 
-Screenshoty budou doplněny.
+https://github.com/novetrendy/SpeedUpWP/blob/master/SpeedUpWP.jpg
 
 # Installation
 
