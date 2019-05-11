@@ -3,7 +3,7 @@
 * Plugin Name: Speed Up WP !
 * Plugin URI: http://webstudionovetrendy.eu/
 * Description: This plugin make your Wordpress instalation much faster! Disable some WP featured for unlock more speed admin backend and also frontend. Use some techniques like JavaScript defer loading, remove some query string, remove not used widgets etc.
-* Version: 161223
+* Version: 190511
 * Text Domain: nt-speed-up-wp
 * Domain Path: /languages/
 * Author: Webstudio Nove Trendy
@@ -33,7 +33,7 @@
 * Přepsání kódu pro automatické aktualizace
 * Oprava chyby v navigaci na stránku s nastavením
 * Přidána podpora pro aktualizaci s GitHubu - nutno mít nainstalovaný GitHub Updater
-2018.05.11
+2019.05.11
 * Nahrávat Google API v CF7 jen na povolených stránkách
 */
 if ( ! defined( 'ABSPATH' ) )   {
