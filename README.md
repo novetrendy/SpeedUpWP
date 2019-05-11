@@ -6,8 +6,8 @@ Tento plugin zrychluje instalaci Wordpressu a Woocommerce. Zakáže některé fu
 
 Tags: Speed, Wordpress, Woocommerce, Admin, Admin speed, jQuery<br />
 Requires at least: 4.0<br />
-Tested up to: 4.7<br />
-Stable tag: 0.5<br />
+Tested up to: 5.2<br />
+Stable tag: 1.0<br />
 
 **Tento plugin zrychluje administraci Wordpressu a Woocommerce.**
 
@@ -70,6 +70,9 @@ Ano, ale pouze lidem, kteří vědí, co jednotlivé funkce dělají.
 Ano můžete. Pokud se toto stane, ručně smažte plugin přes FTP.
 
 # Changelog
+== 190511 ==
+* Nahrávat Google API v CF7 jen na povolených stránkách
+
 = 161223 =
 * Add remove metabox Semper plugins RSS (All In One Seo Pack) from dashboard
 
