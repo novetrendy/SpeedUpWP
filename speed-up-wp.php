@@ -33,6 +33,8 @@
 * Přepsání kódu pro automatické aktualizace
 * Oprava chyby v navigaci na stránku s nastavením
 * Přidána podpora pro aktualizaci s GitHubu - nutno mít nainstalovaný GitHub Updater
+2018.05.11
+* Nahrávat Google API v CF7 jen na povolených stránkách
 */
 if ( ! defined( 'ABSPATH' ) )   {
     exit; // Exit if accessed directly
