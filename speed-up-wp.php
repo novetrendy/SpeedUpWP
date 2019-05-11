@@ -139,8 +139,9 @@ function nt_deregister_cf7() {
     $cf7_page = $sup_options['deregister_cf7_pages'];
     $cf7_pages = explode("," , $cf7_page);
     if ( !is_page($cf7_pages) ) {
-        wp_deregister_style( 'contact-form-7' );
-        wp_deregister_script( 'contact-form-7' );
+        wp_dequeue_script('contact-form-7');
+	wp_dequeue_script('google-recaptcha');
+	wp_dequeue_style('contact-form-7');
     }
 }
 }
